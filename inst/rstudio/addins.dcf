@@ -1,4 +1,4 @@
 Name: typeStringsGadget
 Description: Opens a window to type or paste strings hastily
-Binding: typeStringsGadget
+Binding: typeStringsGadgetAddin
 Interactive: true

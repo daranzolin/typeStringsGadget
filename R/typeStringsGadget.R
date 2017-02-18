@@ -1,3 +1,8 @@
+#' Type strings hastily
+#'
+#' Call this function to open a gadget with a text box
+#'
+#' @export
 typeStringsGadget <- function(...) {
 
   ui <- miniUI::miniPage(
