@@ -1,9 +1,16 @@
 Package: typeStringsGadget
-Title: What the Package Does (one line, title case)
+Title: Type Strings Unencumbered
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
-License: What license is it under?
+Authors@R: person("David", "Ranzolin", email = "daranzolin@gmail.com", role = c("aut", "cre"))
+Description: Opens a window to type or paste strings hastily
+Depends:
+    R (>= 3.3.1)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 5.0.1
+Imports: shiny,
+    miniUI,
+    stringr
+URL: https://github.com/daranzolin/typeStringsGadget
+BugReports: https://github.com/daranzolin/typeStringsGadget/issues
