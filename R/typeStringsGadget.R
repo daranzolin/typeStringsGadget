@@ -60,7 +60,7 @@ typeStringsGadget <- function(...) {
         rv <- stringr::str_to_title(rv)
       }
       if (input$radio3 == "Yes") {
-        rv <- stringr::str_trim(s)
+        rv <- stringr::str_trim(rv)
       }
       stopApp(rv)
     })
