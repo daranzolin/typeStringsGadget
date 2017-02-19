@@ -8,15 +8,28 @@ typeStringsGadget <- function(...) {
   ui <- miniUI::miniPage(
     miniUI::gadgetTitleBar("typeStringsGadget"),
     miniUI::miniContentPanel(
-      shiny::textInput("sep", "Separator:", ", "),
-      shiny::radioButtons("radio1", label = "Class:", choices = list("Character" = "char",
-                                                                    "Numeric" = "num")),
-      shiny::radioButtons("radio2", label = "Convert strings to title?", choices = list("Yes", "No")),
-      shiny::p("Type here:"),
-      shiny::tags$textarea(id = "strings", rows = 3, cols = 75, "Not, free, but, merely, licensed"),
-      shiny::br(),
-      shiny::p("Preview:"),
-      shiny::verbatimTextOutput("preview")
+      fillRow(
+        flex = c(1, 1, 3),
+        fillCol(
+          shiny::textInput("sep", "Separator:", ","),
+          shiny::radioButtons("radio1", label = "Class:", choices = list("Character" = "char", "Numeric" = "num")),
+          shiny::radioButtons("radio2", label = "Convert strings to title?", choices = list("Yes", "No")),
+          shiny::radioButtons("radio3", label = "Trim white space?", choices = list("Yes", "No")),
+          height = "75%"
+          ),
+        fillCol(
+          shiny::br()
+        ),
+        fillCol(
+          shiny::strong("Type here:"),
+          shiny::tags$textarea(id = "strings", rows = 3, cols = 75, "Not, free, but, merely, licensed"),
+          shiny::br(),
+          shiny::br(),
+          shiny::strong("Preview:"),
+          shiny::verbatimTextOutput("preview"),
+          height = "30%"
+        )
+      )
     )
   )
 
@@ -30,6 +43,9 @@ typeStringsGadget <- function(...) {
       }
       if (input$radio2 == "Yes") {
         s <- stringr::str_to_title(s)
+      }
+      if (input$radio3 == "Yes") {
+        s <- stringr::str_trim(s)
       }
       s
     })
